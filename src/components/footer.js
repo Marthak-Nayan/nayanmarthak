@@ -30,11 +30,10 @@ export default function Footer() {
   };
 
   const menuItems = [
-    {name : 'Home', id: 'navbar' },
+    { name: 'Home', id: 'navbar' },
     { name: 'Service', id: 'service' },
     { name: 'Works', id: 'works' },
-    { name: 'About', id: 'about' },
-    { name: 'Contact', id: 'contact' }
+    { name: 'About', id: 'about' }
   ];
 
   const socialLinks = [
@@ -84,7 +83,7 @@ export default function Footer() {
         {/* Right Section - Social Links and Time */}
         <div style={styles.rightSection}>
           <div style={styles.socialSection}>
-            <h3 style={styles.socialTitle}>Connect</h3>
+            <h3 style={styles.socialTitle}>Social</h3>
             <div style={styles.socialLinks}>
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;

@@ -74,12 +74,14 @@ const App = () => {
         setShowMenu(false);
       }
 
-      // ---- NEW CODE HERE ----
-      setHideMenu(false);
-      if (scrollTimer.current) clearTimeout(scrollTimer.current);
-      scrollTimer.current = setTimeout(() => {
-        setHideMenu(true);
-      }, 2500);
+      // ---- MODIFIED CODE: Don't hide menu when it's open ----
+      if (!isMenuOpen) {
+        setHideMenu(false);
+        if (scrollTimer.current) clearTimeout(scrollTimer.current);
+        scrollTimer.current = setTimeout(() => {
+          setHideMenu(true);
+        }, 2500);
+      }
       // ------------------------
 
 
@@ -117,7 +119,7 @@ const App = () => {
     handleScroll();
 
     return () => container.removeEventListener('scroll', handleScroll);
-  }, [activeIndex, visibleItems, services.length]);
+  }, [activeIndex, visibleItems, services.length, isMenuOpen]); // Added isMenuOpen dependency
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -129,10 +131,16 @@ const App = () => {
         behavior: 'smooth'
       });
     }
+    // Auto close menu after clicking
+    setIsMenuOpen(false);
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    // Keep menu button visible when menu is open
+    if (!isMenuOpen) {
+      setHideMenu(false);
+    }
   };
 
   return (
@@ -152,7 +160,7 @@ const App = () => {
 
       {/* Floating Menu Button */}
       <button
-        className={`menu-toggle ${showMenu ? 'visible' : ''} ${isMenuOpen ? 'open' : ''} ${hideMenu ? 'hide' : ''}`}
+        className={`menu-toggle ${showMenu ? 'visible' : ''} ${isMenuOpen ? 'open' : ''} ${hideMenu && !isMenuOpen ? 'hide' : ''}`}
         onClick={toggleMenu}
       >
 
@@ -163,21 +171,30 @@ const App = () => {
 
       {/* Floating Menu */}
       <div className={`floating-menu ${isMenuOpen ? 'open' : ''}`}>
-        <button className="menu-item" onClick={() => scrollToSection('service')}>
+        <button className="menu-item" onClick={() => scrollToSection('navbar')}>
           <span className="menu-number">01</span>
+          <span className="menu-text">Home</span>
+          <span className="menu-arrow">→</span>
+        </button>
+        <button className="menu-item" onClick={() => scrollToSection('service')}>
+          <span className="menu-number">02</span>
           <span className="menu-text">Services</span>
+          <span className="menu-arrow">→</span>
         </button>
         <button className="menu-item" onClick={() => scrollToSection('works')}>
-          <span className="menu-number">02</span>
+          <span className="menu-number">03</span>
           <span className="menu-text">Works</span>
+          <span className="menu-arrow">→</span>
         </button>
         <button className="menu-item" onClick={() => scrollToSection('about')}>
-          <span className="menu-number">03</span>
+          <span className="menu-number">04</span>
           <span className="menu-text">About</span>
+          <span className="menu-arrow">→</span>
         </button>
         <button className="menu-item" onClick={() => scrollToSection('contact')}>
-          <span className="menu-number">04</span>
+          <span className="menu-number">05</span>
           <span className="menu-text">Contact</span>
+          <span className="menu-arrow">→</span>
         </button>
       </div>
 
@@ -198,7 +215,7 @@ const App = () => {
           </div>
 
           <div className="home-center-image">
-            <img src="/images/download.jpeg" alt="Profile" className="image-profile" />
+            <img src="/nayanmarthak/images/download.jpeg" alt="Profile" className="image-profile" />
           </div>
 
           <div className="home-bottom-right">
@@ -277,10 +294,33 @@ const App = () => {
             </p>
           </div>
           <div className="break-line"></div>
-          <Project />
         </section>
+        <div className="projects-section">
+              <Project />
+        </div>
 
         <section class="about" id="about">
+          {/*<span class="section-main-title-works">ABOUT ME/</span>*/}
+          <div class="about-me" id="about-me">
+            <div class="about-image">
+              <img src="/nayanmarthak/images/profile.jpg" alt="About Me"></img>
+            </div>
+            <div class="about-text">
+              <div class="about-details">
+                <div class="about-label">
+                  <span class="service-label">(ABOUT ME)</span>
+                </div>
+                <div class="about-content">
+                  <p class="about-description">
+                    I'm Nayan Marthak — a curious and driven software developer from Rajkot, currently based in Vadodara. I enjoy turning complex problems into simple, reliable solutions and take pride in writing clean, maintainable code.
+                  </p> <br />
+                  <p class="about-description">
+                    "Whatever I do, I do with all my heart and finish it. I believe in curiosity, continuous learning, and giving my best to everything I undertake."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="skills">
             <div class="about-container">
               <div class="left-section desktop-only">
@@ -323,12 +363,11 @@ const App = () => {
                   </div>
                   <div class="skill-column">
                     <div class="skill-category">
-                      <h3>Core CS Concepts</h3>
+                      <h3>Core Concepts</h3>
                       <div class="skill-list">
                         <div>DSA</div>
                         <div>DBMS</div>
                         <div>OOP</div>
-                        <div>Operating Systems</div>
                         <div>System Design</div>
                       </div>
                     </div>
@@ -345,7 +384,7 @@ const App = () => {
             <div class="education-list">
               <div class="education-item">
                 <div class="education-logo">
-                  <img src="/images/svit.jpg" alt="SVIT Logo"></img>
+                  <img src="/nayanmarthak/images/svit.jpg" alt="SVIT Logo"></img>
                 </div>
                 <div class="education-details">
                   <h3 class="education-university">Sardar Vallabhbhai Patel Institute of Technology
@@ -357,34 +396,13 @@ const App = () => {
 
               <div class="education-item">
                 <div class="education-logo">
-                  <img src="/images/atmiya.png" alt="Atmiya Logo"></img>
+                  <img src="/nayanmarthak/images/atmiya.png" alt="Atmiya Logo"></img>
                 </div>
                 <div class="education-details">
                   <h3 class="education-university">Atmiya Institute of Technology & Science, Rajkot</h3>
                   <p class="education-course">Bachelor of Computer Application</p>
                 </div>
                 <div class="education-year">2021 - 2024</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-me" id="about-me">
-            <div class="about-image">
-              <img src="/images/profile.jpg" alt="About Me"></img>
-            </div>
-            <div class="about-text">
-              <div class="about-details">
-                <div class="about-label">
-                  <span class="service-label">(ABOUT ME)</span>
-                </div>
-                <div class="about-content">
-                  <p class="about-description">
-                    I'm Nayan Marthak — a curious and driven software developer from Rajkot, currently based in Vadodara. I enjoy turning complex problems into simple, reliable solutions and take pride in writing clean, maintainable code.
-                  </p> <br />
-                  <p class="about-description">
-                    "Whatever I do, I do with all my heart and finish it. I believe in curiosity, continuous learning, and giving my best to everything I undertake."
-                  </p>
-                </div>
               </div>
             </div>
           </div>

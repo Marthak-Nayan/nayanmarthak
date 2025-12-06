@@ -6,8 +6,8 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: #d7d7dbff;
-    color: #a1a1a1ff;
+    background: #ffffff;
+    color: rgb(216, 214, 214);
     overflow: hidden;
 }
 
@@ -53,10 +53,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px 10px;
+    padding: 0px 30px;
     scroll-margin-top: 80px;
     border-radius: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 
@@ -399,7 +399,7 @@ body {
     width: 45%;
     padding: 15px;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 375;
 }
 
 .nav-links {
@@ -409,8 +409,6 @@ body {
     justify-content: flex-end;
     gap: 20px;
     color: #2e2f32;
-    font-weight: 600;
-    font-size: 1.3rem;
 }
 
 .nav-links .nav-link {
@@ -420,7 +418,7 @@ body {
     background: none;
     border: none;
     color: #2e2f32;
-    font-weight: 600;
+    font-weight: 375;
     font-size: 1.3rem;
     font-family: inherit;
 }
@@ -497,7 +495,7 @@ ul {
 }
 
 .break-line {
-    margin-top: 50px;
+    margin-top: 20px;
     width: 100%;
     height: 0.2px;
     background-color: #5f5e5e;
@@ -510,6 +508,10 @@ ul {
     height: 0.1px;
     background-color: #5f5e5e;
     transition: background-color 0.3s ease;
+}
+
+.projects-section{
+    padding-bottom: 50px;
 }
 
 
@@ -532,9 +534,8 @@ ul {
 /* About Section */
 /* About Section */
 #about {
-    padding: 0px 5%;
+    padding: 0px 30px;
     background: #000;
-    color: #fff;
     min-height: auto;
     margin-top: 25px;
     margin-bottom: 50px;
@@ -546,6 +547,8 @@ ul {
     align-items: center;
     max-width: 1600px;
     margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #333;
 }
 
 .left-section {
@@ -557,7 +560,7 @@ ul {
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: #a1a1a1ff;
+    color: rgb(216, 214, 214);
 }
 
 .skills-header {
@@ -566,7 +569,7 @@ ul {
     font-size: 4.5rem;
     font-weight: 700;
     margin-bottom: 40px;
-    color: #a1a1a1ff;
+    color: rgb(216, 214, 214);
 }
 
 .right-section {
@@ -624,8 +627,8 @@ ul {
 .about-me {
     display: flex;
     gap: 80px;
-    max-width: 1600px;
-    margin: 150px 50px 50px 50px;
+    max-width: 100%;
+    margin: 70px 50px 60px 50px;
     padding: 0 0 80px 0;
     border-bottom: 1px solid #333;
 }
@@ -702,16 +705,16 @@ ul {
 
 /* Education Section inside About */
 .education-section {
-    max-width: 1600px;
-    padding-top: 180px;
-    margin-bottom: 200px;
+    max-width: 100%;
+    padding-top: 75px;
+    margin-bottom: 50px;
 }
 
 .education-title {
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 700;
     margin-bottom: 60px;
-    color: #fff;
+    color: rgb(216, 214, 214);
 }
 
 .education-list {
@@ -1034,7 +1037,7 @@ ul {
     }
 
     .education-section {
-        padding-top: 120px;
+        padding-top: 100px;
         margin-bottom: 150px;
     }
 
@@ -1064,7 +1067,7 @@ ul {
 
     .about-container {
         flex-direction: column;
-        gap: 25px;
+        gap: 60px;
         align-items: flex-start;
     }
 
@@ -1313,7 +1316,7 @@ ul {
 
     /* About Me Section */
     .about-me {
-        margin: 130px 10px 15px 10px;
+        margin: 130px 10px 75px 10px;
         padding: 0 0 35px 0;
         gap: 20px;
     }
@@ -1339,7 +1342,7 @@ ul {
 
     /* Education Section */
     .education-section {
-        padding-top: 100px;
+        padding-top: 80px;
         margin-bottom: 60px;
     }
 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Plus, X, Edit2, Pin } from 'lucide-react';
+import { useState } from 'react';
+import { X, Edit2, Pin } from 'lucide-react';
 
 export default function ProjectStickyNotes() {
   const [notes, setNotes] = useState([
@@ -8,7 +8,7 @@ export default function ProjectStickyNotes() {
       title: "University Management System",
       definition: "Build a comprehensive platform for managing university operations, including student enrollment, course management, and faculty collaboration.",
       technologies: ["Java", "Swing", "MySQL", "Netbeans"],
-      color: "#fef3c7",
+      color: "#ffffff",
       rotation: -2,
       pinned: true,
       projectType: "Desktop"
@@ -18,7 +18,7 @@ export default function ProjectStickyNotes() {
       title: "TeamSpace",
       definition: "A collaborative platform for teams to connect, communicate and conduct meetings in real-time or personally. Facilitates seamless project management and team collaboration.",
       technologies: ["Next.js", "React", "MongoDB", "Node.js", "Socket.io", "Tailwind CSS", "GetStream.io"],
-      color: "#dbeafe",
+      color: "#ffffff",
       rotation: 1,
       pinned: false,
       projectType: "Web"
@@ -28,7 +28,7 @@ export default function ProjectStickyNotes() {
       title: "Test Series",
       definition: "An online test series application that allows users to take practice tests, track their performance, and improve their skills in various subjects.",
       technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-      color: "#dcfce7",
+      color: "#ffffff",
       rotation: -1,
       pinned: true,
       projectType: "Web"
@@ -42,7 +42,7 @@ export default function ProjectStickyNotes() {
     definition: '',
     technologies: '',
     projectType: 'Web',
-    color: '#fef3c7'
+    color: '#ffffff'
   });
 
   const togglePin = (id) => {
@@ -51,9 +51,9 @@ export default function ProjectStickyNotes() {
     ));
   };
 
-  const deleteNote = (id) => {
+  /*const deleteNote = (id) => {
     setNotes(notes.filter(note => note.id !== id));
-  };
+  };*/
 
   const addNewProject = () => {
     if (newProject.title && newProject.definition && newProject.technologies) {
@@ -69,7 +69,7 @@ export default function ProjectStickyNotes() {
         projectType: newProject.projectType
       };
       setNotes([...notes, newNote]);
-      setNewProject({ title: '', definition: '', technologies: '', projectType: 'Web', color: '#fef3c7' });
+      setNewProject({ title: '', definition: '', technologies: '', projectType: 'Web', color: '#ffffff' });
       setShowAddForm(false);
     }
   };
@@ -112,7 +112,7 @@ export default function ProjectStickyNotes() {
                     onClick={() => togglePin(note.id)}
                     style={{
                       ...styles.pinButton,
-                      backgroundColor: note.pinned ? '#ef4444' : '#9ca3af'
+                      backgroundColor: note.pinned ? '#000000' : '#9ca3af'
                     }}
                   >
                     <Pin
@@ -126,16 +126,6 @@ export default function ProjectStickyNotes() {
                     />
                   </button>
                 </div>
-
-                {/* Delete button */}
-                {hoveredNote === note.id && (
-                  <button
-                    onClick={() => deleteNote(note.id)}
-                    style={styles.deleteButton}
-                  >
-                    <X style={{ width: '18px', height: '18px', color: 'white' }} />
-                  </button>
-                )}
 
                 {/* Content */}
                 <div style={styles.content}>
@@ -192,19 +182,6 @@ export default function ProjectStickyNotes() {
               </div>
             </div>
           ))}
-
-          {/* Add new note button */}
-          <div style={styles.noteWrapper} className="sticky-note-wrapper">
-            <button
-              style={styles.addButton}
-              onClick={() => setShowAddForm(true)}
-            >
-              <div style={styles.addIconCircle}>
-                <Plus style={{ width: '32px', height: '32px', color: 'white' }} />
-              </div>
-              <p style={styles.addButtonText}>Add Project</p>
-            </button>
-          </div>
         </div>
       </div>
 
@@ -309,10 +286,12 @@ export default function ProjectStickyNotes() {
           .sticky-grid {
             grid-template-columns: 1fr !important;
             gap: 30px !important;
+            justify-items: center;
           }
           .sticky-note-wrapper {
-            min-height: 410px !important;
-            width: 80%;
+            min-height: 390px !important;
+            width: 90%;
+            max-width: 500px;
           }
         }
 
@@ -326,10 +305,9 @@ export default function ProjectStickyNotes() {
 
 const styles = {
   container: {
-    minHeight: '100vh',
-    // background: 'linear-gradient(to bottom right, #1a1a1a, #2d2d2d, #1a1a1a)',
+    minHeight: 'auto',
     background: 'black',
-    padding: '40px 10px'
+    padding: '40px 0px'
   },
   innerContainer: {
     maxWidth: '1280px',
@@ -417,7 +395,7 @@ const styles = {
     fontWeight: 'bold',
     color: '#1f2937',
     marginBottom: '6px',
-    fontFamily: "'Permanent Marker', cursive",
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif",
     lineHeight: '1.2'
   },
   underline: {
@@ -647,5 +625,4 @@ const styles = {
     marginTop: '10px',
     fontFamily: 'system-ui, -apple-system, sans-serif'
   },
-  
 };
