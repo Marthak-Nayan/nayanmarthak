@@ -334,15 +334,15 @@ const App = () => {
                       <h3>Languages & Tools</h3>
                       <div class="skill-list">
                         <div>Java</div>
-                        <div>Python</div>
-                        <div>MySQL</div>
-                        <div>C++</div>
+                        <div>SQL</div>
                         <div>JavaScript</div>
+                        <div>Maven</div>
                         <div>Git</div>
                         <div>GitHub</div>
                         <div>Postman</div>
-                        <div>Docker</div>
+                        <div>PostgreSQL</div>
                         <div>MongoDB</div>
+                        <div>Docker</div>
                       </div>
                     </div>
                   </div>
@@ -351,13 +351,14 @@ const App = () => {
                       <h3>Frameworks & Libraries</h3>
                       <div class="skill-list">
                         <div>Spring Boot</div>
-                        <div>Hibernate</div>
+                        <div>Hibernate ORM</div>
                         <div>JPA</div>
+                        <div>Spring Security</div>
+                        <div>JWT</div>
+                        <div>RESTful APIs</div>
                         <div>React</div>
                         <div>Next.js</div>
                         <div>Node.js</div>
-                        <div>Express.js</div>
-                        <div>Socket.io</div>
                       </div>
                     </div>
                   </div>
@@ -366,9 +367,8 @@ const App = () => {
                       <h3>Core Concepts</h3>
                       <div class="skill-list">
                         <div>DSA</div>
-                        <div>DBMS</div>
                         <div>OOP</div>
-                        <div>System Design</div>
+                        <div>DBMS</div>
                       </div>
                     </div>
                   </div>

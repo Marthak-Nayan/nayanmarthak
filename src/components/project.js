@@ -1,37 +1,53 @@
 import { useState } from 'react';
 import { X, Edit2, Pin } from 'lucide-react';
+import { FaGithub } from "react-icons/fa";
+
 
 export default function ProjectStickyNotes() {
   const [notes, setNotes] = useState([
     {
       id: 1,
+      title: "MediQueue",
+      definition: "MediQueue is a healthcare management system that efficiently streamlines appointment scheduling, patient flow, and overall administrative operations for better service delivery.",
+      technologies: ["Java", "Spring Boot", "Hibernate ORM", "Spring Security", "JWT", "PostgreSQL", "React.js"],
+      color: "#ffffff",
+      rotation: -2,
+      pinned: true,
+      projectType: "Web",
+      link:"https://github.com/Marthak-Nayan/MediQueue-Backend"
+    },
+    {
+      id: 2,
+      title: "Weatherly",
+      definition: "A weather forecasting application that provides users with real-time weather updates, forecasts, and alerts.",
+      technologies: ["Java", "JSP", "Servlet", "MySQL", "Eclipse"],
+      color: "#ffffff",
+      rotation: -2,
+      pinned: true,
+      projectType: "Web",
+      link:"https://github.com/Marthak-Nayan/Weatherly"
+    },
+    {
+      id: 3,
       title: "University Management System",
       definition: "Build a comprehensive platform for managing university operations, including student enrollment, course management, and faculty collaboration.",
       technologies: ["Java", "Swing", "MySQL", "Netbeans"],
       color: "#ffffff",
       rotation: -2,
       pinned: true,
-      projectType: "Desktop"
+      projectType: "Desktop",
+      link:"https://github.com/Marthak-Nayan/University-Management-System" 
     },
     {
-      id: 2,
+      id: 4,
       title: "TeamSpace",
       definition: "A collaborative platform for teams to connect, communicate and conduct meetings in real-time or personally. Facilitates seamless project management and team collaboration.",
       technologies: ["Next.js", "React", "MongoDB", "Node.js", "Socket.io", "Tailwind CSS", "GetStream.io"],
       color: "#ffffff",
       rotation: 1,
       pinned: false,
-      projectType: "Web"
-    },
-    {
-      id: 3,
-      title: "Test Series",
-      definition: "An online test series application that allows users to take practice tests, track their performance, and improve their skills in various subjects.",
-      technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-      color: "#ffffff",
-      rotation: -1,
-      pinned: true,
-      projectType: "Web"
+      projectType: "Web",
+      link:"https://github.com/Marthak-Nayan/TeamSpace"
     }
   ]);
 
@@ -75,7 +91,7 @@ export default function ProjectStickyNotes() {
   };
 
   const handleViewDetails = (note) => {
-    alert(`Project: ${note.title}\n\nDefinition: ${note.definition}\n\nType: ${note.projectType}\n\nTechnologies: ${note.technologies.join(', ')}`);
+    window.open(note.link, '_blank');
   };
 
   return (
@@ -162,7 +178,7 @@ export default function ProjectStickyNotes() {
                       style={styles.viewButton}
                       onClick={() => handleViewDetails(note)}
                     >
-                      View Details
+                      <FaGithub style={{ marginRight: "5px" }} /> Source
                     </button>
                   </div>
 
@@ -444,14 +460,14 @@ const styles = {
     marginTop: 'auto'
   },
   projectTypeLabel: {
-    padding: '8px 16px',
+    padding: '5px 10px',
     borderRadius: '18px',
     fontSize: '15px',
     fontWeight: '700',
     fontFamily: 'system-ui, -apple-system, sans-serif'
   },
   viewButton: {
-    padding: '10px 18px',
+    padding: '5px 10px',
     backgroundColor: '#1f2937',
     color: 'white',
     border: 'none',
