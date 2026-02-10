@@ -7,17 +7,28 @@ export default function ProjectStickyNotes() {
   const [notes, setNotes] = useState([
     {
       id: 1,
-      title: "MediQueue",
-      definition: "MediQueue is a healthcare management system that efficiently streamlines appointment scheduling, patient flow, and overall administrative operations for better service delivery.",
-      technologies: ["Java", "Spring Boot", "Hibernate ORM", "Spring Security", "JWT", "PostgreSQL", "React.js"],
+      title: "Support Desk",
+      definition: "Support Desk is a ticketing system that helps organizations manage and resolve customer issues efficiently.",
+      technologies: ["Java", "Spring Boot", "WebSocket", "Redis", "Spring Security", "JWT", "PostgreSQL", "React.js"],
       color: "#ffffff",
       rotation: -2,
       pinned: true,
-      projectType: "Web",
-      link:"https://github.com/Marthak-Nayan/MediQueue-Backend"
+      projectType: "Full Stack",
+      link:"https://github.com/Marthak-Nayan/Support-Desk"
     },
     {
       id: 2,
+      title: "MediQueue",
+      definition: "MediQueue is a healthcare management system that efficiently streamlines appointment scheduling, patient flow, and overall administrative operations for better service delivery.",
+      technologies: ["Java", "Spring Boot", "Hibernate ORM", "Spring Security", "JWT", "PostgreSQL"],
+      color: "#ffffff",
+      rotation: -2,
+      pinned: true,
+      projectType: "Backend",
+      link:"https://github.com/Marthak-Nayan/MediQueue-Backend"
+    },
+    {
+      id: 3,
       title: "Weatherly",
       definition: "A weather forecasting application that provides users with real-time weather updates, forecasts, and alerts.",
       technologies: ["Java", "JSP", "Servlet", "MySQL", "Eclipse"],
@@ -28,7 +39,7 @@ export default function ProjectStickyNotes() {
       link:"https://github.com/Marthak-Nayan/Weatherly"
     },
     {
-      id: 3,
+      id: 4,
       title: "University Management System",
       definition: "Build a comprehensive platform for managing university operations, including student enrollment, course management, and faculty collaboration.",
       technologies: ["Java", "Swing", "MySQL", "Netbeans"],
@@ -39,7 +50,7 @@ export default function ProjectStickyNotes() {
       link:"https://github.com/Marthak-Nayan/University-Management-System" 
     },
     {
-      id: 4,
+      id: 5,
       title: "TeamSpace",
       definition: "A collaborative platform for teams to connect, communicate and conduct meetings in real-time or personally. Facilitates seamless project management and team collaboration.",
       technologies: ["Next.js", "React", "MongoDB", "Node.js", "Socket.io", "Tailwind CSS", "GetStream.io"],

@@ -20,9 +20,9 @@ const App = () => {
       title: "Java Software Development",
       description: "Building robust backend systems and APIs using Java and related technologies. I focus on creating scalable, maintainable, and efficient solutions that meet business needs and drive innovation.",
       details: [
-        "Spring Boot, Hibernate & JPA, Microservices",
+        "Spring Boot, Hibernate & JPA",
         "Spring Security & JWT Authentication",
-        "RESTful APIs, Docker"
+        "RESTful APIs"
       ]
     },
     {
@@ -148,7 +148,7 @@ const App = () => {
     <div className="container" ref={containerRef}>
       <nav id="navbar">
         <div className="nav-container">
-          <div className="nav-title">Software Developer</div>
+          <div className="nav-title">Software Engineer</div>
           <ul className="nav-links">
             <li><button className="nav-link" onClick={() => scrollToSection('service')}>Service</button></li>
             <li><button className="nav-link" onClick={() => scrollToSection('works')}>Works</button></li>
@@ -219,8 +219,8 @@ const App = () => {
           </div>
 
           <div className="home-bottom-right">
-            <span className="availability">AVAILABLE FOR WORK</span>
-            <span className="availability-date">DEC'25</span>
+            <span className="availability"></span>
+            <span className="availability-date"></span>
           </div>
         </section>
       </section>
