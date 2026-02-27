@@ -2,6 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import Project from './components/project';
 import './styles.css';
 import Footer from './components/footer';
+import About from './components/About';
+import Hero from './components/Hero';
+import FloatingMenu from './components/FloatingMenu';
+import Services from './components/Services';
+import Works from './components/Works';
+import Navbar from './components/NavBar';
 
 const App = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -146,99 +152,21 @@ const App = () => {
   return (
 
     <div className="container" ref={containerRef}>
-      <nav id="navbar">
-        <div className="nav-container">
-          <div className="nav-title">Software Engineer</div>
-          <ul className="nav-links">
-            <li><button className="nav-link" onClick={() => scrollToSection('service')}>Service</button></li>
-            <li><button className="nav-link" onClick={() => scrollToSection('works')}>Works</button></li>
-            <li><button className="nav-link" onClick={() => scrollToSection('about')}>About</button></li>
-            <li><button className="nav-link" onClick={() => scrollToSection('contact')}>Contact</button></li>
-          </ul>
-        </div>
-      </nav>
+      {/* Navbar */}
+      <Navbar scrollToSection={scrollToSection} />
 
-      {/* Floating Menu Button */}
-      <button
-        className={`menu-toggle ${showMenu ? 'visible' : ''} ${isMenuOpen ? 'open' : ''} ${hideMenu && !isMenuOpen ? 'hide' : ''}`}
-        onClick={toggleMenu}
-      >
-
-        <span className="hamburger-line"></span>
-        <span className="hamburger-line"></span>
-        <span className="hamburger-line"></span>
-      </button>
 
       {/* Floating Menu */}
-      <div className={`floating-menu ${isMenuOpen ? 'open' : ''}`}>
-        <button className="menu-item" onClick={() => scrollToSection('navbar')}>
-          <span className="menu-number">01</span>
-          <span className="menu-text">Home</span>
-          <span className="menu-arrow">→</span>
-        </button>
-        <button className="menu-item" onClick={() => scrollToSection('service')}>
-          <span className="menu-number">02</span>
-          <span className="menu-text">Services</span>
-          <span className="menu-arrow">→</span>
-        </button>
-        <button className="menu-item" onClick={() => scrollToSection('works')}>
-          <span className="menu-number">03</span>
-          <span className="menu-text">Works</span>
-          <span className="menu-arrow">→</span>
-        </button>
-        <button className="menu-item" onClick={() => scrollToSection('about')}>
-          <span className="menu-number">04</span>
-          <span className="menu-text">About</span>
-          <span className="menu-arrow">→</span>
-        </button>
-        <button className="menu-item" onClick={() => scrollToSection('contact')}>
-          <span className="menu-number">05</span>
-          <span className="menu-text">Contact</span>
-          <span className="menu-arrow">→</span>
-        </button>
-      </div>
+      <FloatingMenu scrollToSection={scrollToSection} setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} showMenu={showMenu} hideMenu={hideMenu} toggleMenu={toggleMenu} />
 
-      {/* Overlay */}
-      <div
-        className={`menu-overlay ${isMenuOpen ? 'visible' : ''}`}
-        onClick={() => setIsMenuOpen(false)}
-      ></div>
-
-      <section className="home" id="home">
-        <section className="hero-section">
-          <div className="name-container">
-            <span className="firstname">NAYAN</span>
-            <span className="lastname">MARTHAK</span>
-          </div>
-          <div className="home-bottom-left">
-            <button className="contact-button" onClick={() => scrollToSection('contact')}>CONTACT</button>
-          </div>
-
-          <div className="home-center-image">
-            <img src="/nayanmarthak/images/download.jpeg" alt="Profile" className="image-profile" />
-          </div>
-
-          <div className="home-bottom-right">
-            <span className="availability"></span>
-            <span className="availability-date"></span>
-          </div>
-        </section>
-      </section>
+      {/* Hero Section */}
+      <Hero  scrollToSection={scrollToSection}/>
 
       <div className="main-content">
-        <section className="services" id="service">
-          <span className="section-main-title">WHAT I DO/</span>
-          <div className="services-content">
-            <span className="service-label">(SERVICES)</span>
-            <p className="service-text">
-              I specialize in building Java-based applications that are efficient, scalable,
-              and user-friendly. With a strong foundation in core and advanced Java technologies,
-              I help bring ideas to life — whether it's for a startup, business, or product team.
-            </p>
-          </div>
-          <div className="break-line"></div>
-        </section>
+        {/* Services */}
+        <Services />
 
+        {/* Services Details Section */}
         <div className="services-section" id="servicesSection">
           <div className="services-sticky">
             <div className="services-container">
@@ -284,131 +212,24 @@ const App = () => {
           </div>
         </div>
 
-        <section className="works" id="works">
-          <span className="section-main-title-works">SELECTED WORKS/</span>
-          <div className="services-content">
-            <span className="service-label">(PROJECTS)</span>
-            <p className="service-text">
-              Thoughtfully crafted digital experiences that blend utility and aesthetics into something
-              functional, memorable, and refined.
-            </p>
-          </div>
-          <div className="break-line"></div>
-        </section>
+
+        {/* Works Section */}
+        <Works />
+
+
+        {/* Projects Section */}
         <div className="projects-section">
               <Project />
         </div>
 
-        <section class="about" id="about">
-          {/*<span class="section-main-title-works">ABOUT ME/</span>*/}
-          <div class="about-me" id="about-me">
-            <div class="about-image">
-              <img src="/nayanmarthak/images/profile.jpg" alt="About Me"></img>
-            </div>
-            <div class="about-text">
-              <div class="about-details">
-                <div class="about-label">
-                  <span class="service-label">(ABOUT ME)</span>
-                </div>
-                <div class="about-content">
-                  <p class="about-description">
-                    I'm Nayan Marthak — a curious and driven software developer from Rajkot, currently based in Vadodara. I enjoy turning complex problems into simple, reliable solutions and take pride in writing clean, maintainable code.
-                  </p> <br />
-                  <p class="about-description">
-                    "Whatever I do, I do with all my heart and finish it. I believe in curiosity, continuous learning, and giving my best to everything I undertake."
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="skills">
-            <div class="about-container">
-              <div class="left-section desktop-only">
-                <h1 class="main-title">DEVELOPER<br />DESIGNER<br />CREATOR /</h1>
-              </div>
-              <div class="right-section">
-                <h2 class="skills-header">Skills</h2>
-                <div class="skills-grid">
-                  <div class="skill-column">
-                    <div class="skill-category">
-                      <h3>Languages & Tools</h3>
-                      <div class="skill-list">
-                        <div>Java</div>
-                        <div>SQL</div>
-                        <div>JavaScript</div>
-                        <div>Maven</div>
-                        <div>Git</div>
-                        <div>GitHub</div>
-                        <div>Postman</div>
-                        <div>PostgreSQL</div>
-                        <div>MongoDB</div>
-                        <div>Docker</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-column">
-                    <div class="skill-category">
-                      <h3>Frameworks & Libraries</h3>
-                      <div class="skill-list">
-                        <div>Spring Boot</div>
-                        <div>Hibernate ORM</div>
-                        <div>JPA</div>
-                        <div>Spring Security</div>
-                        <div>JWT</div>
-                        <div>RESTful APIs</div>
-                        <div>React</div>
-                        <div>Next.js</div>
-                        <div>Node.js</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-column">
-                    <div class="skill-category">
-                      <h3>Core Concepts</h3>
-                      <div class="skill-list">
-                        <div>DSA</div>
-                        <div>OOP</div>
-                        <div>DBMS</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="left-section mobile-only">
-                <h1 class="main-title">DEVELOPER<br />DESIGNER<br />CREATOR /</h1>
-              </div>
-            </div>
-          </div>
-          <div class="education-section">
-            <h2 class="education-title">EDUCATION /</h2>
-            <div class="education-list">
-              <div class="education-item">
-                <div class="education-logo">
-                  <img src="/nayanmarthak/images/svit.jpg" alt="SVIT Logo"></img>
-                </div>
-                <div class="education-details">
-                  <h3 class="education-university">Sardar Vallabhbhai Patel Institute of Technology
-                    (Affiliated: GTU), Vasad</h3>
-                  <p class="education-course">Master of Computer Application</p>
-                </div>
-                <div class="education-year">2024 - 2026</div>
-              </div>
-
-              <div class="education-item">
-                <div class="education-logo">
-                  <img src="/nayanmarthak/images/atmiya.png" alt="Atmiya Logo"></img>
-                </div>
-                <div class="education-details">
-                  <h3 class="education-university">Atmiya Institute of Technology & Science, Rajkot</h3>
-                  <p class="education-course">Bachelor of Computer Application</p>
-                </div>
-                <div class="education-year">2021 - 2024</div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* About Section */}
+        <div>
+          <About />
+        </div>
+        
       </div>
 
+      {/* Contact Section */}
       <div className="contact-section" id="contact">
         <Footer />
       </div>

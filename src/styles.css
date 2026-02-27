@@ -547,8 +547,9 @@ ul {
     align-items: center;
     max-width: 1600px;
     margin: 0 auto;
+    margin-top: 15vh;
     padding-bottom: 40px;
-    border-bottom: 1px solid #333;
+    /* border-bottom: 1px solid #333; */
 }
 
 .left-section {
@@ -703,6 +704,93 @@ ul {
     color: rgb(168, 168, 168);
 }
 
+/* Experience Section inside About */
+.experience-section {
+    height: 60vh;
+    max-width: 100%;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    /* border-bottom: 1px solid #333; */
+}
+
+.experience-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: rgb(216, 214, 214);
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    background: #111;
+    border-radius: 15px;
+    border: 1px solid #222;
+    transition: all 0.4s ease;
+}
+
+.experience-item:hover {
+    background: #1a1a1a;
+    border-color: #333;
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.experience-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.experience-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experience-details {
+    flex: 1;
+}
+
+.experience-university {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.experience-course {
+    font-size: 1.4rem;
+    color: #888;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.experience-year {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #b9b9b2;
+    white-space: nowrap;
+    text-align: right;
+    min-width: 130px;
+}
+
+
 /* Education Section inside About */
 .education-section {
     max-width: 100%;
@@ -786,6 +874,7 @@ ul {
     text-align: right;
     min-width: 130px;
 }
+
 
 /* Desktop/Mobile Toggle Classes */
 .desktop-only {
@@ -1057,6 +1146,30 @@ ul {
     .education-year {
         font-size: 1.15rem;
     }
+
+    
+
+    .experience-section {
+        padding-top: 100px;
+        margin-bottom: 150px;
+    }
+
+    .experience-item {
+        padding: 25px;
+        gap: 25px;
+    }
+
+    .experience-university {
+        font-size: 1.35rem;
+    }
+
+    .experience-course {
+        font-size: 1.2rem;
+    }
+
+    .experience-year {
+        font-size: 1.15rem;
+    }
 }
 
 /* Tablets (768px and below) */
@@ -1172,6 +1285,43 @@ ul {
         margin-top: 5px;
     }
 
+    /* Education Section */
+    .experience-section {
+        padding-top: 80px;
+        margin-bottom: 100px;
+    }
+
+    .experience-title {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        margin-bottom: 40px;
+    }
+
+    .experience-item {
+        grid-template-columns: 70px 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .experience-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .experience-university {
+        font-size: 1.2rem;
+    }
+
+    .experience-course {
+        font-size: 1.05rem;
+    }
+
+    .experience-year {
+        grid-column: 2;
+        text-align: left;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
     .skill-list div {
         font-size: 0.95rem;
         padding: 10px 0;
@@ -1267,6 +1417,46 @@ ul {
     }
 
     .education-year {
+        font-size: 0.9rem;
+    }
+
+    /* Education Section */
+    .experience-section {
+        padding-top: 60px;
+        margin-bottom: 80px;
+    }
+
+    .experience-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+        margin-bottom: 30px;
+    }
+
+    .experience-list {
+        gap: 20px;
+    }
+
+    .experience-item {
+        grid-template-columns: 60px 1fr;
+        padding: 18px;
+        gap: 15px;
+    }
+
+    .experience-logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+    }
+
+    .experience-university {
+        font-size: 1.05rem;
+        line-height: 1.3;
+    }
+
+    .experience-course {
+        font-size: 0.95rem;
+    }
+
+    .experience-year {
         font-size: 0.9rem;
     }
 }
@@ -1383,6 +1573,51 @@ ul {
         font-size: 0.85rem;
         margin-top: 3px;
     }
+
+
+    /* Education Section */
+    .experience-section {
+        padding-top: 80px;
+        margin-bottom: 60px;
+    }
+
+    .experience-title {
+        font-size: clamp(1.75rem, 12vw, 2.5rem);
+        margin-bottom: 25px;
+    }
+
+    .experience-list {
+        gap: 15px;
+    }
+
+    .experience-item {
+        grid-template-columns: 55px 1fr;
+        padding: 15px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+
+    .experience-logo {
+        width: 55px;
+        height: 55px;
+        border-radius: 8px;
+    }
+
+    .experience-university {
+        font-size: 0.95rem;
+        line-height: 1.3;
+        margin-bottom: 3px;
+    }
+
+    .experience-course {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .experience-year {
+        font-size: 0.85rem;
+        margin-top: 3px;
+    }
 }
 
 /* Very small devices (360px and below) */
@@ -1421,6 +1656,29 @@ ul {
     }
 
     .education-year {
+        font-size: 0.8rem;
+    }
+
+
+
+    .experience-item {
+        padding: 12px;
+    }
+
+    .experience-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .experience-university {
+        font-size: 0.9rem;
+    }
+
+    .experience-course {
+        font-size: 0.8rem;
+    }
+
+    .experience-year {
         font-size: 0.8rem;
     }
 }

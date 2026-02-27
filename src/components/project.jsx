@@ -29,17 +29,6 @@ export default function ProjectStickyNotes() {
     },
     {
       id: 3,
-      title: "Weatherly",
-      definition: "A weather forecasting application that provides users with real-time weather updates, forecasts, and alerts.",
-      technologies: ["Java", "JSP", "Servlet", "MySQL", "Eclipse"],
-      color: "#ffffff",
-      rotation: -2,
-      pinned: true,
-      projectType: "Web",
-      link:"https://github.com/Marthak-Nayan/Weatherly"
-    },
-    {
-      id: 4,
       title: "University Management System",
       definition: "Build a comprehensive platform for managing university operations, including student enrollment, course management, and faculty collaboration.",
       technologies: ["Java", "Swing", "MySQL", "Netbeans"],
@@ -50,7 +39,7 @@ export default function ProjectStickyNotes() {
       link:"https://github.com/Marthak-Nayan/University-Management-System" 
     },
     {
-      id: 5,
+      id: 4,
       title: "TeamSpace",
       definition: "A collaborative platform for teams to connect, communicate and conduct meetings in real-time or personally. Facilitates seamless project management and team collaboration.",
       technologies: ["Next.js", "React", "MongoDB", "Node.js", "Socket.io", "Tailwind CSS", "GetStream.io"],
@@ -78,9 +67,6 @@ export default function ProjectStickyNotes() {
     ));
   };
 
-  /*const deleteNote = (id) => {
-    setNotes(notes.filter(note => note.id !== id));
-  };*/
 
   const addNewProject = () => {
     if (newProject.title && newProject.definition && newProject.technologies) {
