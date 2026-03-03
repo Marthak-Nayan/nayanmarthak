@@ -1,6 +1,3 @@
-import ProjectStickyNotes from "./project";
-
-
 const Works = () => {
   return (
     <>
