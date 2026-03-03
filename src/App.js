@@ -133,21 +133,34 @@ const App = () => {
 
     if (!container || !element) return;
 
-    // 1️⃣ Calculate element position relative to container
-    const containerRect = container.getBoundingClientRect();
-    const elementRect = element.getBoundingClientRect();
-    const currentScroll = container.scrollTop;
-
-    const topPosition = currentScroll + elementRect.top - containerRect.top;
-
-    // 2️⃣ Scroll smoothly
-    container.scrollTo({
-      top: topPosition - 80, // offset for sticky navbar
-      behavior: 'smooth',
-    });
-
-    // 3️⃣ Close menu if open
+    // Close menu first
     setIsMenuOpen(false);
+
+    // Use offsetTop for accurate position relative to container's scroll space
+    const targetPosition = element.offsetTop - 80; // offset for sticky navbar
+    const startPosition = container.scrollTop;
+    const distance = targetPosition - startPosition;
+    const duration = 800; // ms — increase for slower scroll, decrease for faster
+    let startTime = null;
+
+    // Ease in-out cubic easing
+    const easeInOutCubic = (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const animateScroll = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+
+      container.scrollTop = startPosition + distance * easedProgress;
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
   };
 
   const toggleMenu = () => {
