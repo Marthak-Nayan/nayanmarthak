@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Linkedin, Github, Mail, Instagram } from "lucide-react";
-import "../Footer.css";
 
 export default function Footer({ scrollToSection }) {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -109,10 +108,6 @@ export default function Footer({ scrollToSection }) {
             <span className="location">IST</span>
           </div>
         </div>
-      </div>
-
-      <div className="footer-bottom">
-        © {currentTime.getFullYear()} Nayan Marthak. All rights reserved.
       </div>
     </footer>
   );
