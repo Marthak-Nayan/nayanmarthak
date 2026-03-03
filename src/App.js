@@ -128,16 +128,25 @@ const App = () => {
   }, [activeIndex, visibleItems, services.length, isMenuOpen]); // Added isMenuOpen dependency
 
   const scrollToSection = (sectionId) => {
+    const container = containerRef.current;
     const element = document.getElementById(sectionId);
-    if (element && containerRef.current) {
-      const container = containerRef.current;
-      const elementTop = element.offsetTop;
-      container.scrollTo({
-        top: elementTop - 80,
-        behavior: 'smooth'
-      });
-    }
-    // Auto close menu after clicking
+
+    if (!container || !element) return;
+
+    // 1️⃣ Calculate element position relative to container
+    const containerRect = container.getBoundingClientRect();
+    const elementRect = element.getBoundingClientRect();
+    const currentScroll = container.scrollTop;
+
+    const topPosition = currentScroll + elementRect.top - containerRect.top;
+
+    // 2️⃣ Scroll smoothly
+    container.scrollTo({
+      top: topPosition - 80, // offset for sticky navbar
+      behavior: 'smooth',
+    });
+
+    // 3️⃣ Close menu if open
     setIsMenuOpen(false);
   };
 
@@ -160,7 +169,7 @@ const App = () => {
       <FloatingMenu scrollToSection={scrollToSection} setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} showMenu={showMenu} hideMenu={hideMenu} toggleMenu={toggleMenu} />
 
       {/* Hero Section */}
-      <Hero  scrollToSection={scrollToSection}/>
+      <Hero scrollToSection={scrollToSection} />
 
       <div className="main-content">
         {/* Services */}
@@ -219,19 +228,19 @@ const App = () => {
 
         {/* Projects Section */}
         <div className="projects-section">
-              <Project />
+          <Project />
         </div>
 
         {/* About Section */}
         <div>
           <About />
         </div>
-        
+
       </div>
 
       {/* Contact Section */}
       <div className="contact-section" id="contact">
-        <Footer />
+        <Footer scrollToSection={scrollToSection} />
       </div>
     </div>
   );
