@@ -11,7 +11,7 @@ const Hero = ({ scrollToSection }) => {
           </div>
 
           <div className="home-center-image">
-            <img src="/nayanmarthak/images/download.jpeg" alt="Profile" className="image-profile" />
+            <img src="/images/download.jpeg" alt="Profile" className="image-profile" />
           </div>
 
           <div className="home-bottom-right">

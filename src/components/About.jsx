@@ -7,7 +7,7 @@ const About = () => {
         {/*<span class="section-main-title-works">ABOUT ME/</span>*/}
         <div class="about-me" id="about-me">
           <div class="about-image">
-            <img src="/nayanmarthak/images/profile.jpg" alt="About Me"></img>
+            <img src="/images/profile.jpg" alt="About Me"></img>
           </div>
           <div class="about-text">
             <div class="about-details">
@@ -30,7 +30,7 @@ const About = () => {
           <div class="experience-list">
             <div class="experience-item">
               <div class="experience-logo">
-                <img src="/nayanmarthak/images/logo.png" alt="Nomos Insights Logo" />
+                <img src="/images/logo.png" alt="Nomos Insights Logo" />
               </div>
               <div class="experience-details">
                 <div class="experience-header">
@@ -106,7 +106,7 @@ const About = () => {
           <div class="education-list">
             <div class="education-item">
               <div class="education-logo">
-                <img src="/nayanmarthak/images/svit.jpg" alt="SVIT Logo"></img>
+                <img src="/images/svit.jpg" alt="SVIT Logo"></img>
               </div>
               <div class="education-details">
                 <h3 class="education-university">Sardar Vallabhbhai Patel Institute of Technology
@@ -118,7 +118,7 @@ const About = () => {
 
             <div class="education-item">
               <div class="education-logo">
-                <img src="/nayanmarthak/images/atmiya.png" alt="Atmiya Logo"></img>
+                <img src="/images/atmiya.png" alt="Atmiya Logo"></img>
               </div>
               <div class="education-details">
                 <h3 class="education-university">Atmiya Institute of Technology & Science, Rajkot</h3>
