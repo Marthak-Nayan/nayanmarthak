@@ -35,10 +35,10 @@ const About = () => {
               <div class="experience-details">
                 <div class="experience-header">
                   <h3 class="experience-university">Nomos Insights</h3>
-                  <div class="experience-year">FEB'26 - Present</div>
                 </div>
                 <p class="experience-course">Software Engineer Intern</p>
               </div>
+              <div class="experience-year">FEB'26 - Present</div>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ const About = () => {
                 <img src="/images/GTULogo-scaled.jpg" alt="SVIT Logo"></img>
               </div>
               <div class="education-details">
-                <h3 class="education-university">Gujarat Technological University 
+                <h3 class="education-university">Gujarat Technological University
                   (Affiliated College: SVIT)</h3>
                 <p class="education-course">Master of Computer Application</p>
               </div>

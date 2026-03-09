@@ -777,7 +777,7 @@ ul {
     font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .experience-course {
@@ -785,6 +785,7 @@ ul {
     color: #888;
     line-height: 1.5;
     font-weight: 700;
+    margin: 0;
 }
 
 .experience-year {
