@@ -106,11 +106,11 @@ const About = () => {
           <div class="education-list">
             <div class="education-item">
               <div class="education-logo">
-                <img src="/images/svit.jpg" alt="SVIT Logo"></img>
+                <img src="/images/GTULogo-scaled.jpg" alt="SVIT Logo"></img>
               </div>
               <div class="education-details">
-                <h3 class="education-university">Sardar Vallabhbhai Patel Institute of Technology
-                  (Affiliated: GTU), Vasad</h3>
+                <h3 class="education-university">Gujarat Technological University 
+                  (Affiliated College: SVIT)</h3>
                 <p class="education-course">Master of Computer Application</p>
               </div>
               <div class="education-year">2024 - 2026</div>
