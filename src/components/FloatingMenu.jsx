@@ -136,7 +136,7 @@ const FloatingMenu = ({ scrollToSection, showMenu }) => {
           style={{ transitionDelay: isOpen ? '150ms' : '0ms' }}
         >
           <span className="text-[10px] tracking-[0.35em] uppercase text-[#818356] font-semibold">
-            Menu
+
           </span>
         </div>
 
@@ -195,7 +195,7 @@ const FloatingMenu = ({ scrollToSection, showMenu }) => {
           style={{ transitionDelay: isOpen ? '350ms' : '0ms' }}
         >
           <span className="text-[10px] tracking-[0.25em] uppercase text-[#818356]/50 font-medium">
-            Nayan Marthak · 2025
+            Nayan Marthak · 2026
           </span>
         </div>
 

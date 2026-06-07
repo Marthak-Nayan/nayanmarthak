@@ -138,7 +138,7 @@ export default function Footer({ scrollToSection }) {
             style={{ transitionDelay: '350ms' }}
           >
             <span className="text-[10px] tracking-[0.35em] uppercase text-[#6b6560] font-semibold mb-1">
-              Menu
+              Explore
             </span>
             {menuItems.map((item, i) => (
               <button
@@ -191,10 +191,8 @@ export default function Footer({ scrollToSection }) {
               ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             style={{ transitionDelay: '450ms' }}
           >
-            <span className="text-[10px] tracking-[0.35em] uppercase text-[#6b6560] font-semibold mb-1">
-              Local Time
-            </span>
-            <div className="flex flex-col gap-1">
+
+            <div className="flex flex-col gap-1 mt-10 sm:mt-0">
               <span
                 className={`font-extrabold font-mono text-[#0f172a] leading-none tracking-tight transition-all duration-700 ease-out
                   text-[clamp(20px,4vw,40px)]
