@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Olive background — rotated square (diamond) -->
+  <rect
+    x="4" y="4"
+    width="24" height="24"
+    rx="6"
+    fill="#818356"
+    transform="rotate(0 16 16)"
+  />
+  <!-- Olive inner accent — small rotated square -->
+  <rect
+    x="10" y="10"
+    width="12" height="12"
+    rx="2"
+    fill="none"
+    stroke="#f5f0e8"
+    stroke-width="1.2"
+    opacity="0.4"
+    transform="rotate(45 16 16)"
+  />
+  <!-- N letter — cream -->
+  <text
+    x="16"
+    y="21"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-weight="800"
+    font-size="14"
+    fill="#f5f0e8"
+    text-anchor="middle"
+    letter-spacing="-0.5"
+  >N</text>
+</svg>
