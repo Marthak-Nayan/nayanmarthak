@@ -8,7 +8,7 @@ import Project from './components/Project';
 import FloatingMenu from './components/FloatingMenu';
 import GitHub from './components/Github';
 import CursorEffects from './components/CursorEffects';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 
 const App = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -22,7 +22,7 @@ const App = () => {
   useLayoutEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    
+
     // Prevent browser from doing its own jumpy scroll restoration
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
